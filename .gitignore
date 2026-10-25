@@ -1,0 +1,7 @@
+.DS_Store
+# full-size originals stay local; credits.json is kept
+sources/*.jpg
+sources/*.webp
+# design working notes and inspector screenshots (they mention the real client) stay local
+.taste-skill/
+.claude/
