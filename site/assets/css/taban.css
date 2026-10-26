@@ -219,10 +219,15 @@ button { font: inherit; color: inherit; }
 .spec tbody th { font-weight: 300; font-size: clamp(18px, 1.5vw, 21px); transition: color .3s var(--ease); }
 .spec tbody tr.on th { color: var(--gold-hi); }
 .coins-note { margin-top: 22px; color: var(--muted); font-size: 14.5px; }
-.stage { position: relative; background: var(--bg); border: 1px solid var(--line-soft); padding: clamp(28px, 4vw, 56px); display: grid; gap: 34px; }
-.tray { display: flex; align-items: flex-end; justify-content: center; gap: clamp(18px, 3vw, 40px); min-height: clamp(150px, 16vw, 220px); }
+/* the coins are sized to the stage (cqi), not the window, so the row always fits inside the box; the vw values are the fallback for browsers without container units */
+.stage { position: relative; background: var(--bg); border: 1px solid var(--line-soft); padding: clamp(28px, 4vw, 56px); display: grid; gap: 34px; container-type: inline-size; }
+.tray {
+  display: flex; align-items: flex-end; justify-content: center;
+  gap: clamp(18px, 3vw, 40px); gap: clamp(12px, 4cqi, 40px);
+  min-height: clamp(150px, 16vw, 220px); min-height: clamp(110px, 40cqi, 200px);
+}
 .coin-btn {
-  --d: 22; width: calc(var(--d) * clamp(5.2px, .58vw, 9px)); aspect-ratio: 1; padding: 0; border: 0; border-radius: 50%;
+  --d: 22; width: calc(var(--d) * clamp(5.2px, .58vw, 9px)); width: calc(var(--d) * clamp(3.5px, 1.5cqi, 9px)); aspect-ratio: 1; padding: 0; border: 0; border-radius: 50%;
   background: none; cursor: pointer; transition: transform .6s var(--ease), filter .6s var(--ease); -webkit-tap-highlight-color: transparent; touch-action: manipulation;
 }
 .coin-btn svg { width: 100%; height: 100%; }
