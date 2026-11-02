@@ -5,3 +5,5 @@ sources/*.webp
 # design working notes and inspector screenshots (they mention the real client) stay local
 .taste-skill/
 .claude/
+# Ponisha notes stay local (they name the client)
+PONISHA.md
